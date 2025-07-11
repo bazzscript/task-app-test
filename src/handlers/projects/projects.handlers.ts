@@ -57,5 +57,5 @@ export const getProject = async (c: Context) => {
  */
 export const getAllProjects = async (c: Context) => {
   const allProjects = await db.select().from(projects);
-  return c.json(allProjects);
+  return c.json(allProjects, 200);
 };

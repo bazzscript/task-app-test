@@ -23,6 +23,7 @@ export const createTask = async (c: Context) => {
     title,
     completed: false,
     dueDate: new Date(dueDate),
+    _id: new ObjectId
   });
 
   // Return the insertedId as a string in the JSON response.
