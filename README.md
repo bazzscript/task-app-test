@@ -4,15 +4,40 @@ This is a basic task management API built with Hono, Drizzle (for PostgreSQL), a
 
 ## Requirements
 
-- Node.js (or Bun)
 - PostgreSQL database
 - MongoDB database
+
+**Note on Runtime:** This project is primarily configured to run with [Bun](https://bun.sh/). While the core libraries are generally Node.js compatible, running this project with Node.js would require modifications to the `package.json` scripts (e.g., for starting the server and running tests) and potentially replacing Bun-specific APIs (like `bun:test`).
+
+## Bun Installation
+
+Bun is a fast all-in-one JavaScript runtime. You can install it on various operating systems:
+
+### macOS & Linux
+
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+
+### Windows
+
+**Using PowerShell (as Administrator):**
+
+```powershell
+Invoke-RestMethod -Uri https://bun.sh/install.ps1 | Invoke-Expression
+```
+
+**Using WSL (Windows Subsystem for Linux):**
+
+Follow the Linux installation instructions within your WSL terminal.
+
+For more detailed instructions and alternative installation methods, refer to the [official Bun documentation](https://bun.sh/docs/installation).
 
 ## Setup Instructions
 
 1.  **Clone the repository:**
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/bazzscript/task-app-test
     cd task-app-test
     ```
 
@@ -33,7 +58,7 @@ This is a basic task management API built with Hono, Drizzle (for PostgreSQL), a
     ```
 
 4.  **Run Drizzle Migrations (for PostgreSQL):**
-    First, generate the migration files:
+    First, generate the migration files (this is not required, you can ignore, the migration has alaready been generated):
     ```sh
     bun drizzle-kit generate
     ```
